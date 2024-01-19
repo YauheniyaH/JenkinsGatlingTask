@@ -4,7 +4,7 @@ pipeline {
 
  stages {
 
- stage('Performance Tests') {
+ stage('Gatling preparation') {
 
  steps {
 
