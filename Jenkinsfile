@@ -2,7 +2,7 @@ node {
 
  //agent any
 
- stages {
+// stages {
 
  stage('Gatling preparation') {
     steps {
@@ -29,5 +29,5 @@ node {
 
   }
 
-}
+//}
 }
