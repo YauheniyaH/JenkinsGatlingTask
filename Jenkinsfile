@@ -6,7 +6,7 @@ pipeline {
 
  stage('Gatling preparation') {
     steps {
-      sh "rmdir /var/tmp/gatling3"
+      sh "rm -rf /var/tmp/gatling3"
        sh "mkdir /var/tmp/gatling3"
       
        sh "wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.0.3/gatling-charts-highcharts-bundle-3.0.3-bundle.zip -P /var/tmp/gatling3"
