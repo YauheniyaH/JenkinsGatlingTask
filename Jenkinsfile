@@ -1,6 +1,6 @@
 pipeline {
 
- agent { label 'perf-testing-node'}
+ agent any
 
  stages {
 
