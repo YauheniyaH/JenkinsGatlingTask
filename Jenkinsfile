@@ -22,7 +22,7 @@ pipeline {
  stage('Performance Tests') {
   steps{
        dir('.') {
-           sh "gatling.sh -rf . -rsf src/resources/ -sf src/simulations/ -s Simulation_Class_Name"
+           sh "gatling.sh -rf . -rsf src/resources/ -sf src/simulations/ -s PerfTestSimulation"
            gatlingArchive()
           }
     }
