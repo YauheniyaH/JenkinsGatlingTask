@@ -5,7 +5,7 @@ node {
 // stages {
 
  stage('Gatling preparation') {
-    steps {
+  //  steps {
       sh "rm -rf /var/tmp/gatling3"
        sh "mkdir /var/tmp/gatling3"
       
@@ -16,18 +16,18 @@ node {
        sh "export GATLING_HOME=”/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.0.3\""
       
        sh "export PATH=$PATH:/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.0.3/bin"
-   }
+ //  }
  }
 
  stage('Performance Tests') {
-  steps{
+ // steps{
        dir('.') {
            sh "gatling.sh -rf . -rsf src/resources/ -sf src/simulations/ -s Simulation_Class_Name"
            gatlingArchive()
           }
     }
 
-  }
+ // }
 
 //}
 }
