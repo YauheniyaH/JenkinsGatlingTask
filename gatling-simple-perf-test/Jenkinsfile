@@ -9,20 +9,20 @@ pipeline {
       sh "rm -rf /var/tmp/gatling3"
        sh "mkdir /var/tmp/gatling3"
       
-       sh "/opt/homebrew/bin/wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.6.1/gatling-charts-highcharts-bundle-3.6.1-bundle.zip -P /var/tmp/gatling3"
+       sh "/opt/homebrew/bin/wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.3.1/gatling-charts-highcharts-bundle-3.6.1-bundle.zip -P /var/tmp/gatling3"
       
-       sh "unzip -o /var/tmp/gatling3/gatling-charts-highcharts-bundle-3.6.1-bundle.zip -d /var/tmp/gatling3"
+       sh "unzip -o /var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.1-bundle.zip -d /var/tmp/gatling3"
       
-       sh "export GATLING_HOME=/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.6.1"
+       sh "export GATLING_HOME=/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.1"
       
-       sh "export PATH=$PATH:/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.6.1/bin"
+       sh "export PATH=$PATH:/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.1/bin"
    }
  }
 
  stage('Performance Tests') {
   steps{
        dir('/Users/Yauheniya_Hladkaya/Documents/performance_testing_training/Gatling materials/gatling-simple-perf-test') {
-          sh "/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.6.1/bin/gatling.sh -rf . -rsf src/test/resources/feeders/ -sf src/test/scala/simulations/ -s PerfTestSimulation"
+          sh "/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.1/bin/gatling.sh -rf . -rsf src/test/resources/feeders/ -sf src/test/scala/simulations/ -s PerfTestSimulation"
        
         gatlingArchive()
           }
