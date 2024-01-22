@@ -22,7 +22,7 @@ pipeline {
  stage('Performance Tests') {
   steps{
        dir('.') {
-           sh "/Users/Yauheniya_Hladkaya/Documents/performance_testing_training/Gatling/gatling-charts-highcharts-bundle-3.9.5/bin/gatling.sh -rf . -rsf src/resources/ -sf src/simulations/ -s PerfTestSimulation"
+           sh "gatling.sh -rf . -rsf src/resources/ -sf src/simulations/ -s PerfTestSimulation"
            gatlingArchive()
           }
     }
