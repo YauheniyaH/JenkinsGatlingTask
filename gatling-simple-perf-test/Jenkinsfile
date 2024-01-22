@@ -22,8 +22,8 @@ pipeline {
  stage('Performance Tests') {
   steps{
        dir('/Users/Yauheniya_Hladkaya/Documents/performance_testing_training/Gatling materials/gatling-simple-perf-test') {
-           sh "/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.0/bin/gatling.sh -rf . -rsf src/resources/ -sf src/scala/simulations/ -s simulations.PerfTestSimulation"
-           gatlingArchive()
+           sh "/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.0/bin/gatling.sh -rf . -rsf src/test/resources/ -sf src/test/scala/simulations/ -s simulations.PerfTestSimulation
+        gatlingArchive()
           }
     }
 
