@@ -22,7 +22,7 @@ pipeline {
  stage('Performance Tests') {
   steps{
        dir('.') {
-          sh """/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.1/bin/gatling.sh -rf . -rsf src/test/resources/feeders/ -sf src/test/scala/simulations/ -s PerfTestSimulation"""
+          sh '''/var/tmp/gatling3/gatling-charts-highcharts-bundle-3.3.1/bin/gatling.sh -rf . -rsf src/test/resources/feeders/ -sf /src/test/scala/simulations -s PerfTestSimulation'''
        
         gatlingArchive()
           }
